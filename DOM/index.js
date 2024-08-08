@@ -1,30 +1,16 @@
-const mainHeading=document.querySelector("#main-heading");
-mainHeading.style.textAlign="right";
-
+const divs=document.querySelectorAll("div");
 const fruits=document.querySelector(".fruits");
-fruits.style.backgroundColor="grey";
-fruits.style.padding="30px";
-fruits.style.margin="30px";
-fruits.style.width="50%";
-fruits.style.listStyleType="none";
-fruits.style.borderRadius="5px";
 
-const basketHeading=document.querySelector("#basket-heading");
-basketHeading.style.marginLeft="30px";
+const subHeading=document.createElement("h3");
+const subHeadingText=document.createTextNode("Buy high quality organic fruits online");
+subHeading.appendChild(subHeadingText);
+divs[0].appendChild(subHeading);
 
-const fruit=document.querySelectorAll(".fruit");
-for(let i=0;i<fruit.length;i++){
-  fruit[i].style.backgroundColor="white";
-  fruit[i].style.padding="10px";
-  fruit[i].style.margin="10px";
-  fruit[i].style.borderRadius="5px";
-}
+subHeading.style.fontStyle="italic";
 
-// Write answer to the questions asked below:
-basketHeading.style.color="brown";
+const para=document.createElement("p");
+const paraText=document.createTextNode("Total fruits: 4");
+para.appendChild(paraText);
+divs[1].insertBefore(para,fruits);
 
-const evenFruitItems=document.querySelectorAll(".fruit:nth-child(even)");
-for(let i=0;i<evenFruitItems.length;i++){
-  evenFruitItems[i].style.backgroundColor="brown";
-  evenFruitItems[i].style.color="white";
-}
+para.setAttribute("id", "fruits-total");
