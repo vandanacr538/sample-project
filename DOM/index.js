@@ -1,16 +1,37 @@
-const divs=document.querySelectorAll("div");
+// Add the Edit Button:
+const fruit=document.querySelectorAll(".fruit");
 const fruits=document.querySelector(".fruits");
+const form=document.querySelector("form");
 
-const subHeading=document.createElement("h3");
-const subHeadingText=document.createTextNode("Buy high quality organic fruits online");
-subHeading.appendChild(subHeadingText);
-divs[0].appendChild(subHeading);
+//Adding Edit button
+for(let i=0;i<fruit.length;i++){
+  const button=document.createElement("button");
+  const buttonText=document.createTextNode("Edit");
+  button.appendChild(buttonText);
+  button.setAttribute("class", "edit-btn");
+  fruit[i].appendChild(button);
+}
 
-subHeading.style.fontStyle="italic";
+//Adding functionality to delete button
+fruits.addEventListener('click', function(event){
+  if(event.target.classList.contains("delete-btn")){
+    const fruitToDelete=event.target.parentElement;
+    fruits.removeChild(fruitToDelete);
+  }
+});
 
-const para=document.createElement("p");
-const paraText=document.createTextNode("Total fruits: 4");
-para.appendChild(paraText);
-divs[1].insertBefore(para,fruits);
-
-para.setAttribute("id", "fruits-total");
+//Adding to add new fruit 
+form.addEventListener("submit", function(event){
+  event.preventDefault();
+  const fruitToAdd=document.getElementById("fruit-to-add");
+  const addLi=document.createElement("li");
+  addLi.innerHTML=fruitToAdd.value+
+    '<button class="delete-btn">x</button>';
+  const editButton=document.createElement("button");
+  const editButtonText=document.createTextNode("Edit");
+  editButton.appendChild(editButtonText);
+  editButton.setAttribute("class", "edit-btn");
+  addLi.appendChild(editButton);
+  addLi.setAttribute('class','fruit');
+  fruits.appendChild(addLi);
+})
