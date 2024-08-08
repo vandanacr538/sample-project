@@ -14,11 +14,20 @@
 
 // thanksDiv.innerHTML='<p>Please visit us again</p>'
 
-// Task 2 Code
-const fruit=document.getElementsByClassName("fruit");
+// // Task 2 Code
+// const fruit=document.getElementsByClassName("fruit");
 
-fruit[2].style.backgroundColor='yellow';
+// fruit[2].style.backgroundColor='yellow';
 
-for(let i=0;i<fruit.length;i++){
-  fruit[i].style.fontWeight="bold";
+// for(let i=0;i<fruit.length;i++){
+//   fruit[i].style.fontWeight="bold";
+// }
+
+// task 3 Code
+const list=document.getElementsByTagName("li");
+
+list[4].style.color="blue";
+
+for(let i=0;i<list.length;i++){
+  list[i].style.fontStyle="italic";
 }
