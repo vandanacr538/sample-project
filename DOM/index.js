@@ -1,33 +1,30 @@
-// Task 1 code
-// const heading=document.getElementById("main-heading");
-// const header=document.getElementById("header");
-// const basketHeading=document.getElementById("basket-heading");
-// const thanksDiv=document.getElementById("thanks");
+const mainHeading=document.querySelector("#main-heading");
+mainHeading.style.textAlign="right";
 
-// heading.textContent= "Fruit World";
-// heading.style.color="orange";
+const fruits=document.querySelector(".fruits");
+fruits.style.backgroundColor="grey";
+fruits.style.padding="30px";
+fruits.style.margin="30px";
+fruits.style.width="50%";
+fruits.style.listStyleType="none";
+fruits.style.borderRadius="5px";
 
-// header.style.backgroundColor="green";
-// header.style.borderBottom="2px solid orange";
+const basketHeading=document.querySelector("#basket-heading");
+basketHeading.style.marginLeft="30px";
 
-// basketHeading.style.color="green";
+const fruit=document.querySelectorAll(".fruit");
+for(let i=0;i<fruit.length;i++){
+  fruit[i].style.backgroundColor="white";
+  fruit[i].style.padding="10px";
+  fruit[i].style.margin="10px";
+  fruit[i].style.borderRadius="5px";
+}
 
-// thanksDiv.innerHTML='<p>Please visit us again</p>'
+// Write answer to the questions asked below:
+basketHeading.style.color="brown";
 
-// // Task 2 Code
-// const fruit=document.getElementsByClassName("fruit");
-
-// fruit[2].style.backgroundColor='yellow';
-
-// for(let i=0;i<fruit.length;i++){
-//   fruit[i].style.fontWeight="bold";
-// }
-
-// task 3 Code
-const list=document.getElementsByTagName("li");
-
-list[4].style.color="blue";
-
-for(let i=0;i<list.length;i++){
-  list[i].style.fontStyle="italic";
+const evenFruitItems=document.querySelectorAll(".fruit:nth-child(even)");
+for(let i=0;i<evenFruitItems.length;i++){
+  evenFruitItems[i].style.backgroundColor="brown";
+  evenFruitItems[i].style.color="white";
 }
