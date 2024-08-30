@@ -19,6 +19,20 @@ function handleFormSubmit(event) {
     document.getElementById("phone").value = "";
   }
   
+  document.addEventListener("DOMContentLoaded", ()=>{
+    const data=axios
+    .get(
+      "https://crudcrud.com/api/339a895eb98f40be83c09fddbc1a866c/appointmentData",
+    )
+    .then((response) => {
+        for(let i=0;i<response.data.length;i++){
+            displayUserOnScreen(response.data[i]);
+        }
+    })
+    .catch((error) => console.log(error));
+    console.log(data);
+ });
+  
   function displayUserOnScreen(userDetails) {
     const userItem = document.createElement("li");
     userItem.appendChild(
