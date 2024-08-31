@@ -66,8 +66,8 @@ function handleFormSubmit(event) {
     });
   
     editBtn.addEventListener("click", function (event) {
+      deleteUser(userDetails._id);
       userList.removeChild(event.target.parentElement);
-      localStorage.removeItem(userDetails.email);
       document.getElementById("username").value = userDetails.username;
       document.getElementById("email").value = userDetails.email;
       document.getElementById("phone").value = userDetails.phone;
