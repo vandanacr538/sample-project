@@ -30,8 +30,16 @@ function handleFormSubmit(event) {
         }
     })
     .catch((error) => console.log(error));
-    console.log(data);
  });
+ 
+ function deleteUser(user_id) {
+  axios
+      .delete(
+        `https://crudcrud.com/api/339a895eb98f40be83c09fddbc1a866c/appointmentData/${user_id}`,
+      )
+      .then((response) => console.log(response.data))
+      .catch((error) => console.log(error));
+ }
   
   function displayUserOnScreen(userDetails) {
     const userItem = document.createElement("li");
@@ -52,9 +60,9 @@ function handleFormSubmit(event) {
     const userList = document.querySelector("ul");
     userList.appendChild(userItem);
   
-    deleteBtn.addEventListener("click", function (event) {
+    deleteBtn.addEventListener("click", function(event){
+      deleteUser(userDetails._id);
       userList.removeChild(event.target.parentElement);
-      localStorage.removeItem(userDetails.email);
     });
   
     editBtn.addEventListener("click", function (event) {
